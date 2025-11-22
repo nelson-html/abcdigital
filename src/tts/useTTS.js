@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { TTSContext } from './context'
+import { TTSContext } from '@/tts/context'
 
 export function useTTS() {
   const ctx = useContext(TTSContext)

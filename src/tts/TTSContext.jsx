@@ -1,5 +1,5 @@
 import React, { useMemo, useRef, useState, useCallback, useEffect } from 'react'
-import { TTSContext } from './context'
+import { TTSContext } from '@/tts/context'
 
 export default function TTSProvider({ children }) {
   const [enabled, setEnabled] = useState(false)

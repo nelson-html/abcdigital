@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useTTS } from './useTTS'
+import { useTTS } from '@/tts/useTTS'
 
 export default function TTSButton() {
   const { enabled, toggle, rate, setRate, stop } = useTTS()

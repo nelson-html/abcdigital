@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet, NavLink } from 'react-router-dom'
 // import ToggleTheme from '../ui/ToggleTheme'
-import TTSButton from '../tts/TTSButton'
+import TTSButton from '@/tts/TTSButton'
 
 export default function AppLayout() {
   return (

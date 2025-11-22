@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import { useParams } from 'react-router-dom'
-import { useProgress } from '../../hooks/useProgress'
-import PlayerYouTube from '../../components/PlayerYouTube'
-import { useTTS } from '../../tts/useTTS'
+import { useProgress } from '@/hooks/useProgress'
+import PlayerYouTube from '@/components/PlayerYouTube'
+import { useTTS } from '@/tts/useTTS'
 
 const content = {
    1: {

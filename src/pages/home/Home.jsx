@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useProgress } from '../../hooks/useProgress'
+import { useProgress } from '@/hooks/useProgress'
 
 const modules = [
   { id: '1', title: 'Uso básico de celulares', desc: 'Navegación, apps y configuraciones.' },
