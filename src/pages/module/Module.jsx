@@ -13,7 +13,7 @@ const content = {
             title: "Navegación básica",
             text: "La navegación en un celular se realiza principalmente mediante gestos táctiles y botones físicos. Los gestos más importantes son: **Tocar** (tap) para seleccionar apps o elementos; **Deslizar** (swipe) hacia arriba, abajo o a los lados para navegar entre pantallas; **Pellizcar** (pinch) con dos dedos para hacer zoom en fotos o textos; y **Mantener presionado** para acceder a opciones adicionales. Los botones físicos principales incluyen el **botón de encendido/apagado** (lateral derecho), que también sirve para bloquear la pantalla; los **botones de volumen** (lateral izquierdo) para ajustar el sonido; y en algunos modelos, el **botón de inicio** (frontal inferior) para volver a la pantalla principal. Para regresar a la pantalla anterior, usa el botón de retroceso (◁) o desliza desde el borde izquierdo. La **barra de notificaciones** se abre deslizando desde arriba hacia abajo, mostrando mensajes y configuraciones rápidas. Practica estos gestos básicos para familiarizarte con tu dispositivo y ganar confianza en su uso diario.",
             video: "dQw4w9WgXcQ",
-            images: ["/public/assets/Botones_del_celular.avif"],
+            images: ["/assets/Botones_del_celular.avif"],
          },
          {
             id: "1-2",

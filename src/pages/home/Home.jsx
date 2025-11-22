@@ -20,7 +20,7 @@ export default function Home() {
       <header className="space-y-2 w-full flex flex-col">
 
         <div className='w-full object-cover '>
-          <img className='w-full max-h-9/12 block md:max-h-72 object-cover lg:max-h-96 xl:max-h-96 lg:object-top xl:object-center' src="/public/assets/aprendiendo.avif" alt="" />
+          <img className='w-full max-h-9/12 block md:max-h-72 object-cover lg:max-h-96 xl:max-h-96 lg:object-top xl:object-center' src="/assets/aprendiendo.avif" alt="" />
         </div>
 
         <div className='w-full p-4'>
