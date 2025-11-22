@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useParams } from 'react-router-dom'
 import { useProgress } from '@/hooks/useProgress'
-import PlayerYouTube from '@/components/PlayerYouTube'
+import PlayerYoutube from '@/components/PlayerYoutube'
 import { useTTS } from '@/tts/useTTS'
 
 const content = {
@@ -239,7 +239,7 @@ export default function Module() {
 
                 {/* Seccion de youtube */}
               <div className="mt-4">
-                <PlayerYouTube videoId={lesson.video} title={lesson.title} />
+                <PlayerYoutube videoId={lesson.video} title={lesson.title} />
               </div>
 
               <div className="mt-4 flex flex-col sm:flex-row gap-2">
