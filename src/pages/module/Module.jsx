@@ -208,43 +208,84 @@ const content = {
 export default function Module() {
   const { id } = useParams()
   const data = content[id]
-  const { markCompleted } = useProgress()
+  const { markCompleted, isLessonCompleted } = useProgress()
   const { speakElement } = useTTS()
   const textRefs = useRef({})
 
   if (!data) return <section className="p-4 text-center">Módulo no encontrado.</section>
 
   return (
-    <section className="mx-auto max-w-3xl p-4 space-y-6">
-      <header className="space-y-2">
-        <h1 className="text-2xl font-bold">{data.title}</h1>
-        <p className="text-gray-600 dark:text-gray-400">Completa las lecciones y marca tu progreso.</p>
+    <section className="mx-auto max-w-4xl p-6 space-y-8 animate-fade-in">
+      <header className="space-y-3 text-center">
+        <h1 className="text-4xl font-bold gradient-text">{data.title}</h1>
+        <p className="text-gray-600 text-lg">Completa las lecciones y marca tu progreso.</p>
       </header>
 
-      <ul className="space-y-4">
-        {data.lessons.map(lesson => (
-          <li key={lesson.id} className="border rounded p-4 bg-white dark:bg-gray-900 dark:border-gray-700">
+      <ul className="space-y-6">
+        {data.lessons.map((lesson, index) => (
+          <li 
+            key={lesson.id} 
+            className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover-lift animate-scale-in"
+            style={{ animationDelay: `${index * 100}ms` }}
+          >
             <article aria-labelledby={`h-${lesson.id}`}>
+              {/* Gradient accent bar */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-t-2xl"></div>
+              
               <div ref={el => textRefs.current[lesson.id] = el}>
-                <h2 id={`h-${lesson.id}`} className="text-lg font-semibold">{lesson.title}</h2>
-                <p className="mt-2 text-gray-700 dark:text-gray-300">{lesson.text}</p>
+                <h2 
+                  id={`h-${lesson.id}`} 
+                  className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-3"
+                >
+                  <span className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-bold text-sm">
+                    {index + 1}
+                  </span>
+                  {lesson.title}
+                </h2>
+                <p className="text-base text-gray-700 leading-relaxed">{lesson.text}</p>
               </div>
 
-                {/* Seccion de imagenes */}
-              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {/* Seccion de imagenes */}
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {lesson.images.map((src, i) => (
-                  <img key={i} loading="lazy" src={src} alt={`${lesson.title} - Imagen ${i+1}`} className="w-full h-auto rounded" />
+                  <div key={i} className="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img 
+                      loading="lazy" 
+                      src={src} 
+                      alt={`${lesson.title} - Imagen ${i+1}`} 
+                      className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300" 
+                    />
+                  </div>
                 ))}
               </div>
 
-                {/* Seccion de youtube */}
-              <div className="mt-4">
+              {/* Seccion de youtube */}
+              <div className="mt-6 rounded-xl overflow-hidden shadow-lg">
                 <PlayerYoutube videoId={lesson.video} title={lesson.title} />
               </div>
 
-              <div className="mt-4 flex flex-col sm:flex-row gap-2">
-                <button onClick={() => markCompleted(id, lesson.id)} className="px-3 py-2 border rounded hover:bg-gray-50 dark:hover:bg-gray-800">Marcar completado</button>
-                <button onClick={() => speakElement(textRefs.current[lesson.id])} className="px-3 py-2 border rounded hover:bg-gray-50 dark:hover:bg-gray-800">Leer lección</button>
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                {isLessonCompleted(id, lesson.id) ? (
+                  <button 
+                    disabled
+                    className="flex-1 px-6 py-3 rounded-xl font-medium bg-gradient-to-r from-blue-500 to-cyan-500 text-white cursor-default shadow-md opacity-90"
+                  >
+                    ✓ Completado
+                  </button>
+                ) : (
+                  <button 
+                    onClick={() => markCompleted(id, lesson.id)} 
+                    className="flex-1 px-6 py-3 rounded-xl font-medium bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600 focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer"
+                  >
+                    ✓ Marcar completado
+                  </button>
+                )}
+                <button 
+                  onClick={() => speakElement(textRefs.current[lesson.id])} 
+                  className="flex-1 px-6 py-3 rounded-xl font-medium bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-indigo-600 hover:to-purple-600 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-all duration-300 shadow-md hover:shadow-xl"
+                >
+                  🔊 Leer lección
+                </button>
               </div>
             </article>
           </li>

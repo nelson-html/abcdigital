@@ -35,5 +35,10 @@ export function useProgress() {
     return totalLessons > 0 ? Math.round((done / totalLessons) * 100) : 0
   }, [progress])
 
-  return { progress, markCompleted, getModulePercent }
+  const isLessonCompleted = useCallback((moduleId, lessonId) => {
+    const m = progress[moduleId] || { completed: {} }
+    return !!m.completed[lessonId]
+  }, [progress])
+
+  return { progress, markCompleted, getModulePercent, isLessonCompleted }
 }
