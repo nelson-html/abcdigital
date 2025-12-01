@@ -18,19 +18,10 @@ export default function Home() {
     <section className="mx-auto flex-col flex max-full space-y-8 animate-fade-in">
 
       <header className="space-y-2 w-full flex flex-col">
-
-        <div className='w-full object-cover relative overflow-hidden'>
-          <img 
-            className='w-full max-h-9/12 block md:max-h-72 object-cover lg:max-h-96 xl:max-h-96 lg:object-top xl:object-center' 
-            src="/assets/aprendiendo.avif" 
-            alt="imagen hero"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-        </div>
-
-        <div className='w-full p-6 bg-white/80 backdrop-blur-sm'>
-          <p className="text-xl text-gray-800 font-medium">Plataforma educativa accesible para habilidades digitales.</p>
+        <div className='w-full p-12 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 text-center'>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text leading-tight">
+            Plataforma educativa accesible para habilidades digitales
+          </h1>
         </div>
       </header>
 
