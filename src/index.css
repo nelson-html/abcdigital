@@ -41,6 +41,9 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  /* Fix for mobile touch highlight */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 body {
@@ -48,6 +51,25 @@ body {
   @apply bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 text-gray-900;
   background-attachment: fixed;
   min-height: 100vh;
+  /* Additional mobile touch fixes */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection for specific elements */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a {
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 :focus-visible {
