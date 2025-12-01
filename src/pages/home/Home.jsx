@@ -17,11 +17,14 @@ export default function Home() {
   return (
     <section className="mx-auto flex-col flex max-full space-y-8 animate-fade-in">
 
-      <header className="space-y-2 w-full flex flex-col">
-        <div className='w-full p-12 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 text-center'>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text leading-tight">
+      <header className="w-full">
+        <div className='w-full px-6 py-10 sm:px-8 sm:py-12 md:px-12 md:py-16 lg:py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 text-center'>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold gradient-text leading-tight max-w-5xl mx-auto">
             Plataforma educativa accesible para habilidades digitales
           </h1>
+          <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+            Aprende a tu ritmo con lecciones interactivas
+          </p>
         </div>
       </header>
 
