@@ -30,7 +30,16 @@ export default function TTSProvider({ children }) {
     utterRef.current = null
   }, [])
 
-  const toggle = useCallback(() => setEnabled(v => !v), [])
+  const toggle = useCallback(() => {
+    setEnabled(v => {
+      const newValue = !v
+      // Si se está desactivando (OFF), detener la lectura
+      if (!newValue) {
+        stop()
+      }
+      return newValue
+    })
+  }, [stop])
 
   // 2) Hablar un elemento con reintento cuando las voces aún no están
   const speakElement = useCallback((el) => {
