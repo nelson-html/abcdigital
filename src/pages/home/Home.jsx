@@ -1,83 +1,130 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useProgress } from '@/hooks/useProgress'
+import React from "react";
+import { Link } from "react-router-dom";
+import { useProgress } from "@/hooks/useProgress";
 
 const modules = [
-  { id: '1', title: 'Uso básico de celulares', desc: 'Navegación, apps y configuraciones.' },
-  { id: '2', title: 'Uso básico de computadoras', desc: 'Escritorio, navegador y SO.' },
-  { id: '3', title: 'Navegación segura', desc: 'Riesgos, contraseñas y privacidad.' },
-  { id: '4', title: 'Búsqueda y evaluación', desc: 'Motores y verificación.' },
-  { id: '5', title: 'Comunicación digital', desc: 'Email, mensajería y video.' },
-  { id: '6', title: 'Productividad', desc: 'Ofimática y colaboración.' }
-]
+   {
+      id: "1",
+      title: "Uso básico de celulares",
+      desc: "Navegación, apps y configuraciones.",
+   },
+   {
+      id: "2",
+      title: "Uso básico de computadoras",
+      desc: "Escritorio, navegador y SO.",
+   },
+   {
+      id: "3",
+      title: "Navegación segura",
+      desc: "Riesgos, contraseñas y privacidad.",
+   },
+   {
+      id: "4",
+      title: "Búsqueda y evaluación",
+      desc: "Motores y verificación.",
+   },
+   {
+      id: "5",
+      title: "Comunicación digital",
+      desc: "Email, mensajería y video.",
+   },
+   {
+      id: "6",
+      title: "Productividad",
+      desc: "Ofimática y colaboración.",
+   },
+];
 
 export default function Home() {
-  const { getModulePercent } = useProgress()
+   const { getModulePercent } = useProgress();
 
-  return (
-    <section className="mx-auto flex-col flex max-full space-y-8 animate-fade-in">
+   return (
+      <section className="mx-auto flex-col flex max-full space-y-8 animate-fade-in">
+         <header
+            id="hero-section"
+            className="w-full"
+         >
+            <div className="w-full px-6 py-10 sm:px-8 sm:py-12 md:px-12 md:py-16 lg:py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 text-center">
+               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold gradient-text leading-tight max-w-5xl mx-auto">
+                  Plataforma educativa accesible para
+                  habilidades digitales
+               </h1>
+               <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                  Aprende a tu ritmo con lecciones
+                  interactivas
+               </p>
+            </div>
+         </header>
 
-      <header className="w-full">
-        <div className='w-full px-6 py-10 sm:px-8 sm:py-12 md:px-12 md:py-16 lg:py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 text-center'>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold gradient-text leading-tight max-w-5xl mx-auto">
-            Plataforma educativa accesible para habilidades digitales
-          </h1>
-          <p className="mt-4 text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
-            Aprende a tu ritmo con lecciones interactivas
-          </p>
-        </div>
-      </header>
-
-      {/* Bloques de modulo home */}
-      <div className="grid grid-cols-1 p-6 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {modules.map((m, index) => {
-          const pct = getModulePercent(m.id, 4)
-          return (
-            <article 
-              key={m.id} 
-              className="group relative bg-white rounded-2xl p-6 shadow-lg hover-lift overflow-hidden border border-gray-100 animate-scale-in"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              {/* Gradient accent on top */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
-              
-              <h2 className="text-xl text-gray-900 font-bold mb-2 group-hover:text-indigo-600 transition-colors duration-300">
-                {m.title}
-              </h2>
-              
-              <p className="text-sm text-gray-600 mt-2 mb-4 leading-relaxed">
-                {m.desc}
-              </p>
-              
-              <div 
-                className="mt-4" 
-                role="progressbar" 
-                aria-valuenow={pct} 
-                aria-valuemin="0" 
-                aria-valuemax="100" 
-                aria-label={`Progreso ${m.title}`}
-              >
-                <div className="h-3 bg-gray-100 rounded-full overflow-hidden shadow-inner">
-                  <div 
-                    className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all duration-500 ease-out relative overflow-hidden" 
-                    style={{ width: `${pct}%` }}
+         {/* Bloques de modulo home */}
+         <div className="grid grid-cols-1 p-6 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {modules.map((m, index) => {
+               const pct = getModulePercent(m.id, 4);
+               return (
+                  <article
+                     key={m.id}
+                     id={
+                        index === 0
+                           ? "module-card-1"
+                           : undefined
+                     }
+                     className="group relative bg-white rounded-2xl p-6 shadow-lg hover-lift overflow-hidden border border-gray-100 animate-scale-in"
+                     style={{
+                        animationDelay: `${index * 100}ms`,
+                     }}
                   >
-                    <div className="absolute inset-0 bg-white/20 animate-shimmer"></div>
-                  </div>
-                </div>
-                <p className="text-xs text-gray-500 mt-2 font-medium">{pct}% completado</p>
-              </div>
-              
-              <Link 
-                className="mt-5 inline-flex items-center justify-center w-full text-white font-medium px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-all duration-300 shadow-md hover:shadow-xl" 
-                to={`/modulo/${m.id}`}
-              >
-                Entrar al módulo
-              </Link>
-            </article>
-          )
-        })}
-      </div>
-    </section>
-  )
+                     {/* Gradient accent on top */}
+                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+
+                     <h2 className="text-xl text-gray-900 font-bold mb-2 group-hover:text-indigo-600 transition-colors duration-300">
+                        {m.title}
+                     </h2>
+
+                     <p className="text-sm text-gray-600 mt-2 mb-4 leading-relaxed">
+                        {m.desc}
+                     </p>
+
+                     <div
+                        id={
+                           index === 0
+                              ? "module-progress-1"
+                              : undefined
+                        }
+                        className="mt-4"
+                        role="progressbar"
+                        aria-valuenow={pct}
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-label={`Progreso ${m.title}`}
+                     >
+                        <div className="h-3 bg-gray-100 rounded-full overflow-hidden shadow-inner">
+                           <div
+                              className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all duration-500 ease-out relative overflow-hidden"
+                              style={{ width: `${pct}%` }}
+                           >
+                              <div className="absolute inset-0 bg-white/20 animate-shimmer"></div>
+                           </div>
+                        </div>
+                        <p className="text-xs text-gray-500 mt-2 font-medium">
+                           {pct}% completado
+                        </p>
+                     </div>
+
+                     <Link
+                        id={
+                           index === 0
+                              ? "module-button-1"
+                              : undefined
+                        }
+                        className="mt-5 inline-flex items-center justify-center w-full text-white font-medium px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 transition-all duration-300 shadow-md hover:shadow-xl"
+                        to={`/modulo/${m.id}`}
+                     >
+                        Entrar al módulo
+                     </Link>
+                  </article>
+               );
+            })}
+         </div>
+      </section>
+   );
 }
