@@ -79,18 +79,7 @@ export default function Lesson() {
         </div>
 
         {/* Images Section */}
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {lesson.images.map((src, i) => (
-            <div key={i} className="overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
-              <img 
-                loading="lazy" 
-                src={src} 
-                alt={`${lesson.title} - Imagen ${i+1}`} 
-                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" 
-              />
-            </div>
-          ))}
-        </div>
+
 
         {/* YouTube Section */}
         <div className="mt-6 rounded-xl overflow-hidden shadow-lg">
