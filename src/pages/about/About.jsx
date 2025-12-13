@@ -10,7 +10,7 @@ const team = [
   {
     name: 'José Aguirre',
     role: '',
-    photo: '/ruta/o/url/de/la-foto2.jpg',
+    photo: '/assets/joseramon.avif',
     bio: ''
   },
   {
