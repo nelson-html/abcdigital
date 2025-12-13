@@ -4,7 +4,7 @@ const team = [
   {
     name: 'Nelson Ruiz',
     role: '',
-    photo: '/public/assets/nelsonruiz.avif',
+    photo: '/assets/nelsonruiz.avif',
     bio: ''
   },
   {
@@ -16,7 +16,7 @@ const team = [
   {
     name: 'Nelson Salgado',
     role: '',
-    photo: '/public/assets/Nelson Salgado.avif',
+    photo: '/assets/Nelson Salgado.avif',
     bio: ''
   }
 ]
