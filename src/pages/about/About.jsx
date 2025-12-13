@@ -2,9 +2,9 @@ import React from 'react'
 
 const team = [
   {
-    name: 'Nelson Martinez',
+    name: 'Nelson Ruiz',
     role: '',
-    photo: '/public/assets/Nelson Salgado.jpg',
+    photo: '/public/assets/nelsonruiz.avif',
     bio: ''
   },
   {
