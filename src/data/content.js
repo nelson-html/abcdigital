@@ -138,7 +138,7 @@ export const content = {
             id: "5-1",
             title: "Email",
             text: "El correo electrónico sigue siendo una herramienta fundamental de comunicación profesional y personal. Para redactar un email efectivo, comienza con un asunto claro que resuma el contenido (ejemplo: 'Consulta sobre proyecto - Fecha límite'). Usa un saludo apropiado: formal ('Estimado/a Sr./Sra.') para contextos profesionales, o informal ('Hola') para conocidos. El cuerpo debe ser conciso y bien estructurado; usa párrafos cortos y ve al punto rápidamente. Termina con una despedida (Saludos, Atentamente) y tu nombre. Para adjuntar archivos, haz clic en el ícono de clip y selecciona el archivo; verifica que sea el correcto antes de enviar. Menciona en el email que adjuntaste algo ('Adjunto encontrarás...'). Usa CC (copia) para incluir personas que deben estar informadas, y CCO (copia oculta) cuando los destinatarios no deben ver las direcciones de otros. Revisa ortografía antes de enviar. Organiza tu bandeja de entrada con carpetas y etiquetas. Responde emails importantes dentro de 24-48 horas. Ten cuidado con 'Responder a todos'; úsalo solo cuando todos necesiten ver tu respuesta.",
-            video: "dQw4w9WgXcQ",
+            video: "TV5c-0xGcFg",
             images: ["/img/modulo5/comm1.webp"],
          },
          {
