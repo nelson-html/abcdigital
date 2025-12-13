@@ -16,7 +16,7 @@ const team = [
   {
     name: 'Nelson Salgado',
     role: '',
-    photo: '/public/assets/Nelson Salgado.jpg',
+    photo: '/public/assets/Nelson Salgado.avif',
     bio: ''
   }
 ]
