@@ -86,7 +86,7 @@ export default function Lesson() {
                 loading="lazy" 
                 src={src} 
                 alt={`${lesson.title} - Imagen ${i+1}`} 
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300" 
+                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300" 
               />
             </div>
           ))}

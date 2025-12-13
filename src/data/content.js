@@ -14,7 +14,7 @@ export const content = {
             title: "Instalar apps",
             text: "Para instalar aplicaciones en tu celular, primero abre la tienda de aplicaciones: Google Play Store en Android o App Store en iPhone. Usa el ícono de búsqueda (lupa) en la parte superior para encontrar la app que necesitas, escribe el nombre completo o palabras clave relacionadas. Una vez que encuentres la aplicación correcta, verifica que sea del desarrollador oficial leyendo el nombre del creador debajo del título. Presiona el botón Instalar (Android) o Obtener (iPhone) y espera a que se descargue e instale automáticamente. Algunas apps requieren permisos como acceso a la cámara o ubicación; lee cuidadosamente qué permisos solicita antes de aceptar. Para actualizar tus apps, ve a la sección 'Mis aplicaciones' o 'Actualizaciones' en la tienda y presiona 'Actualizar todo' o actualiza apps individuales. Mantener tus aplicaciones actualizadas es importante para la seguridad y para acceder a nuevas funciones. Si una app no funciona correctamente, puedes desinstalarla manteniendo presionado su ícono y seleccionando 'Desinstalar'.",
             video: "AXKngs0GwGI",
-            images: ["/img/modulo1/cel2.webp"],
+            images: ["/assets/ios-android-portada-2699383webp.webp"],
          },
          {
             id: "1-3",
